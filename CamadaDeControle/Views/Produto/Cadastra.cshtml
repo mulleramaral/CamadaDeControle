@@ -1,0 +1,23 @@
+﻿@model CamadaDeControle.Models.Produto
+
+@{
+    ViewBag.Title = "Cadastra";
+}
+
+<h2>Cadastra</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorFor(m => m.Id)
+    <div>@Html.LabelFor(m => m.Nome)</div>
+    @Html.EditorFor(m => m.Nome)
+
+    <div>@Html.LabelFor(m => m.Descricao)</div>
+    @Html.EditorFor(m => m.Descricao)
+
+    <div>@Html.LabelFor(m => m.Preco)</div>
+    @Html.EditorFor(m => m.Preco)
+
+    <div><input type="submit" value="Cadastrar" /></div>
+}
+

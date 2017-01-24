@@ -1,0 +1,31 @@
+﻿@using CamadaDeControle.Models
+@model IEnumerable<Produto>
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+@if(TempData["Mensagem"] != null)
+{
+    <div>@TempData["Mensagem"]</div>
+}
+
+<table>
+    <tr>
+        <th>@Html.DisplayNameFor(m => m.Nome)</th>
+        <th>@Html.DisplayNameFor(m => m.Descricao)</th>
+        <th>@Html.DisplayNameFor(m => m.Preco)</th>
+    </tr>
+@foreach (var produto in Model)
+{
+    <tr>
+        <td>@Html.DisplayFor(p => produto.Nome)</td>
+        <td>@Html.DisplayFor(p => produto.Descricao)</td>
+        <td>@Html.DisplayFor(p => produto.Preco)</td>
+        <td>@Html.ActionLink("Editar","Editar",new { id = produto.Id })</td>
+    </tr>
+}
+</table>
+
